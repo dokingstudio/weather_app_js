@@ -82,9 +82,17 @@
   --transition-short: 100ms ease;
 }
 
+@font-face {
+  font-family: 'abc';
+  src: url('../font/PretendardVariable.ttf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
+
 *,
 *::before,
 *::after {
@@ -360,7 +368,7 @@ body {
   top: 0;
   width: 100%;
   height: 100vh;
-  /* background:var(--surface); */
+  background: var(--surface);
   background: #ddd;
   color: var(--on-surface);
   z-index: 999;

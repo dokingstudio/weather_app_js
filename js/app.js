@@ -7,6 +7,15 @@
 
 export function eventOnElmts(elmts, event, callback) {
   for (const elmt of elmts) {
-    elmt.addEventListener('event', callback);
+    elmt.addEventListener(event, callback);
   }
 }
+
+fetch(
+  'https://www.dabipyeung.com/baexang_back/product/get_products?cate=pp&limit=5&sort=new'
+)
+  .then((response) => {
+    return response.json();
+  })
+  .then((json) => console.log(json))
+  .catch((err) => console.log(err));

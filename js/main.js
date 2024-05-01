@@ -1,9 +1,10 @@
 import { eventOnElmts } from './app.js';
 
-const number = document.querySelectorAll('.current-weather .heading');
+const searchView = document.querySelector('[data-search-view]'); // 숙성요소를 선택하는 법
+const searchTogglers = document.querySelectorAll('[data-search-toggler]');
 
-function changeColor() {
-  number[0].style.color = 'red';
+function toggleSearch() {
+  searchView.classList.toggle('active');
 }
 
-eventOnElmts(number, 'click', changeColor);
+eventOnElmts(searchTogglers, 'click', toggleSearch);
