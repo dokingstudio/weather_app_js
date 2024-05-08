@@ -82,17 +82,9 @@
   --transition-short: 100ms ease;
 }
 
-@font-face {
-  font-family: 'abc';
-  src: url('../font/PretendardVariable.ttf') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 /*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
-
 *,
 *::before,
 *::after {
@@ -369,7 +361,6 @@ body {
   width: 100%;
   height: 100vh;
   background: var(--surface);
-  background: #ddd;
   color: var(--on-surface);
   z-index: 999;
   clip-path: circle(4% at calc(100% - 102px) 5%);
@@ -381,7 +372,7 @@ body {
 .search-view.active {
   opacity: 1;
   visibility: visible;
-  clip-path: circle(130% at 73px 5%);
+  clip-path: circle(130% at 73% 5%);
 }
 
 .search-wrapper {
@@ -411,6 +402,11 @@ body {
   100% {
     transform: translateY(-50%) rotate(360deg);
   }
+}
+
+/* search-wrapper의 자식 태그 중에서 searching 이라는 클래스를 가질때 beofre의 속성 변화 */
+.search-wrapper:has(.searching)::before {
+  display: block;
 }
 
 .search-wrapper > .m-icon {

@@ -1,26 +1,25 @@
 const api_key = '30f79eac8f2abb1b72a3955b3e52147d';
 
-export const urls = {
+export const url = {
+  // endpoint urls
   currentWeather(lat, lon) {
-    return `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=matric`;
+    return `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric`;
   },
 
   geocode(loca) {
-    return `http://api.openweathermap.org/geo/1.0/direct?q=${loca}&limit=5`;
+    return `https://api.openweathermap.org/geo/1.0/direct?q=${loca}&limit=5`;
   },
 };
+
 /**
  *
- * @param {*} url
- * @param {*} callback
+ * @param {string} url
+ * @param {funtion} callback
  */
-const fetchData = function (url, callback) {
+
+export const fetchData = function (url, callback) {
   fetch(`${url}&appid=${api_key}`)
     .then((response) => response.json())
     .then((data) => callback(data))
     .catch((error) => console.log(error));
 };
-
-fetchData(urls.geocode('london'), function (locations) {
-  console.log(locations);
-});
