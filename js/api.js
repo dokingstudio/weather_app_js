@@ -9,12 +9,20 @@ export const url = {
   geocode(loca) {
     return `https://api.openweathermap.org/geo/1.0/direct?q=${loca}&limit=5`;
   },
+
+  forecast(lat, lon) {
+    return `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric`;
+  },
+
+  airPollution(lat, lon) {
+    return `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&units=metric`;
+  },
 };
 
 /**
  *
  * @param {string} url
- * @param {funtion} callback
+ * @param {function} callback
  */
 
 export const fetchData = function (url, callback) {

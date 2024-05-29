@@ -404,7 +404,7 @@ body {
   }
 }
 
-/* search-wrapper의 자식 태그 중에서 searching 이라는 클래스를 가질때 beofre의 속성 변화 */
+/* search-wrapper의 자식 태그 중에서 searcing 이라는 클래스를 가질때 before의 속성 변화 */
 .search-wrapper:has(.searching)::before {
   display: block;
 }
@@ -706,4 +706,29 @@ article.container::before {
 
 .footer .body-3:last-child {
   gap: 6px;
+}
+
+/*-----------------------------------*\
+  #FOOTER
+\*-----------------------------------*/
+.loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading::before {
+  content: '';
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--white);
+  border-top-color: transparent;
+  border-radius: 100%;
+  animation: loading 1s linear infinite;
 }
